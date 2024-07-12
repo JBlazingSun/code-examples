@@ -82,10 +82,33 @@ build_maven_module() {
   }
 }
 
-if [[ "$MODULE" == "module6" ]]
+
+if [[ "$MODULE" == "module7" ]]
 then
   # ADD NEW MODULES HERE
   # (add new modules above the rest so you get quicker feedback if it fails)
+  build maven_module "aws/spring-cloud-aws-s3"
+  build maven_module "aws/spring-cloud-sns-sqs-pubsub"
+  build maven_module "apache-http-client"
+  build maven_module "archunit"
+  build maven_module "aws/structured-logging-cw"
+  build_gradle_module "kotlin/coroutines"
+  build_maven_module "core-java/streams/data-streams"
+  build maven_module "aws/kinesis"
+  build maven_module "aws/sqs"
+  build_maven_module "core-java/annotation-processing/introduction-to-annotations"
+
+  echo ""
+  echo "+++"
+  echo "+++ MODULE 7 SUCCESSFUL"
+  echo "+++"
+fi
+
+
+if [[ "$MODULE" == "module6" ]]
+then
+  build maven_module "core-java/records"
+  build_maven_module "spring-boot/spring-boot-app-info"
   build_maven_module "spring-boot/spring-boot-null-safe-annotations"
   build maven_module "aws/cdkv2"
   build_maven_module "immutables"
@@ -118,6 +141,7 @@ fi
 
 if [[ "$MODULE" == "module5" ]]
 then
+  build_maven_module "spring-boot/beginners-guide"
   build_maven_module "aws/aws-dynamodb"
   build_maven_module "spring-boot/spring-boot-testconfiguration"
   build_maven_module "aws/springcloudrds"
@@ -183,9 +207,12 @@ then
   build_maven_module "resilience4j/timelimiter"
   build_maven_module "resilience4j/bulkhead"
   build_maven_module "resilience4j/circuitbreaker"
+  build_maven_module "openfeign/openfeign-client-intro"
   build_gradle_module "spring-data/spring-data-jdbc-converter"
   build_gradle_module "reactive"
   build_gradle_module "junit/assumptions"
+  build_maven_module "junit/junit5/junit5"
+  build_maven_module "junit/junit5/functional-interfaces"
   build_gradle_module "logging"
   build_gradle_module "pact/pact-feign-consumer"
 
